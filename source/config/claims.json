@@ -1,0 +1,66 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "Sample Node.js Claims Rule API",
+    "description": "Node.js App that provides a business rule engine for processing insurance claims",
+    "version": "1.0"
+  },
+  "host": "claims-rule-node-demo.mybluemix.net",
+  "schemes": [ "https", "http" ],
+  "produces": [ "application/json" ],
+  "paths": {
+    "/claim/rule": {
+      "get": {
+        "summary": "Get the decision for a claim",
+        "description": "Returns a decision for medical, dental and drug claims based on business rules",
+        "operationId": "getClaimRule",
+        "tags": [
+          "claims"
+        ],
+        "parameters": [
+          {
+            "name": "claimType",
+            "in": "query",
+            "description": "The claim type. Valid values are dental, drug and medical.",
+            "type": "string",
+            "required": true
+          },
+          {
+            "name": "claimAmount",
+            "in": "query",
+            "description": "The claim type. Valid values are dental, drug and medical.",
+            "type": "number",
+            "required": true
+          }           
+        ],
+        "responses": {
+          "200": {
+            "description": "Provides automatic approval of insurance claims that are within certain guidelines",
+            "schema": {
+              "$ref": "#/definitions/claims"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "claims": {
+      "type": "object",
+      "properties": {
+        "claim-type" : {
+          "type": "string"
+        },
+        "amount" : {
+          "type": "string"
+        }, 
+        "status": {
+          "type": "string"
+        },
+        "reason": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}
