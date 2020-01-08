@@ -1,0 +1,82 @@
+<server description="z/OS Connect EE server sample">
+
+  <!-- Enable features -->
+  <featureManager>
+    <feature>zosconnect:zosconnect-2.0</feature>
+    <feature>zosconnect:apiRequester-1.0</feature>
+    <feature>zosconnect:cicsService-1.0</feature>
+    <feature>ssl-1.0</feature>
+    <feature>zosWlm-1.0</feature>
+    <feature>appSecurity-2.0</feature>
+  </featureManager>
+
+  <!-- Specify the host and port(s) to listen for requests into the server -->
+  <httpEndpoint host="*" httpPort="9080" httpsPort="9443" id="defaultHttpEndpoint"/>
+
+  <!-- Add cors to allow cross origin access, e.g. when using swagger UI to fetch swagger doc from zOS Connect Enterprise Edition  -->
+  <cors allowCredentials="true" allowedHeaders="Origin, Content-Type, Authorization" allowedMethods="GET, POST, PUT, DELETE, OPTiONS" allowedOrigins="*" domain="/" id="defaultCORSConfig" maxAge="3600"/>
+
+  <!-- NOTE: Disabling automatic polling for changes to configuration files,
+       deployed services and APIs is a prudent option for z/OS Connect EE.
+     Polling might be convenient for iterative development and test
+     systems, but not for production.
+
+       Configuration elements that can drive significant polling activity by
+     default are specified below to explicitly disable automatic polling.
+     Further element types to consider for polling interval include
+     zosconnect_zosConnectDataXform (default 2 seconds) and
+     keyStore (default 500 milliseconds).
+
+     Consider setting the updateTrigger attribute to "polled" if changes
+     to associated resources need to be picked up automatically, and tune
+     the polling interval accordingly. The attribute that controls polling
+     frequency for each of these elements is included, together with its
+     associated default value.
+    -->
+
+  <ssl enabledCiphers="SSL_DHE_RSA_WITH_AES_128_CBC_SHA256 SSL_ECDHE_RSA_WITH_AES_128_CBC_SHA256 SSL_RSA_WITH_AES_128_CBC_SHA256 SSL_DHE_RSA_WITH_AES_128_GCM_SHA256 SSL_ECDHE_RSA_WITH_AES_128_GCM_SHA256 SSL_RSA_WITH_AES_128_GCM_SHA256" id="defaultSSLConfig" keyStoreRef="defaultKeyStore" sslProtocol="TLSv1.2" trustStoreRef="defaultKeyStore"/>
+
+  <keyStore id="defaultKeyStore" password="Liberty"/>
+
+  <safRegistry id="saf" realm="zosConnect"/>
+
+  <safAuthorization racRouteLog="ASIS"/>
+
+  <safCredentials 
+     profilePrefix="BBGZDFLT" 
+     unauthenticatedUser="WSGUEST"/>
+
+  <!-- config requires updateTrigger="mbean" for REFRESH command support -->
+  <config 
+     monitorInterval="500" 
+     updateTrigger="mbean"/>
+
+  <!-- zosConnect APIs -->
+  <zosconnect_zosConnectAPIs 
+     pollingRate="5s" 
+     updateTrigger="disabled"/>
+
+  <!-- zosConnect Services -->
+  <zosconnect_services 
+     pollingRate="5s" 
+     updateTrigger="disabled"/>
+
+  <!-- applicationMonitor is not applicable for z/OS Connect EE servers -->
+  <applicationMonitor dropinsEnabled="false" updateTrigger="disabled"/>
+ 
+  <zosconnect_endpointConnection id="nodejsClaims"
+     host="claims-rule-node-demo.mybluemix.net"
+     port="80"/>
+     
+  <zosconnect_cicsIpicConnection id="zconipic"
+  	 host="<hostname>"
+  	 port="<portnum"/>
+
+  <!-- Switch security off -->
+  <zosconnect_zosConnectManager 
+     requireAuth="false" 
+     requireSecure="false" 
+     preserveJsonPayloadCharFormat="true" 
+     setUTF8ResponseEncoding="true"/>
+
+</server>
