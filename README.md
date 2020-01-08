@@ -95,11 +95,10 @@ Follow the steps below to generate and deploy from the sample projects / source 
 
 * To deploy the API from the API Toolkit, follow the steps described in the [Deploying an API in the API toolkit](https://www.ibm.com/support/knowledgecenter/SS4SVW_3.0.0/designing/api_deploy_aar.html) section of the z/OS Connect EE documentation in the IBM Knowledge Center.
 
-* Create the ARA file and other API Requester artifacts using the z/OS Connect Enterprise Edition build toolkit.
+* Create the ARA file and other API Requester artifacts using the z/OS Connect Enterprise Edition build toolkit and follow the steps described in the [How to deploy an API requester automatically](https://www.ibm.com/support/knowledgecenter/SS4SVW_3.0.0/administering_apireqs/auto_apiReq_mgmnt.html) section of the z/OS Connect EE documentation in the IBM Knowledge Center. If transferring the file via ftp, ensure the file is transferred as binary.
   ```sh
   zconbt -p=claims.properties -f=claims.ara
   ```
-and follow the steps described in the [How to deploy an API requester automatically](https://www.ibm.com/support/knowledgecenter/SS4SVW_3.0.0/administering_apireqs/auto_apiReq_mgmnt.html) section of the z/OS Connect EE documentation in the IBM Knowledge Center. If transferring the file via ftp, ensure the file is transferred as binary.
 
 ## Testing the sample API
 
@@ -216,7 +215,7 @@ Below is the sample output, note that the **ClaimStatus** field was set to **PEN
               "ClaimAmount": 250,
               "ServiceDate": "01/02/2020",
               "Description": "DOCTOR VISIT",
-              "ServiceProvider": "DR John Doe",
+              "ServiceProvider": "DR JOHN DOE",
               "ClaimStatus": "PEND",
               "ClaimType": "MEDICAL"
             }
