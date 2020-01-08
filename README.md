@@ -1,6 +1,6 @@
 # Sample z/OS application for z/OS Connect Enterprise Edition (EE)
 
-This repository contains a sample CICS COBOL application that uses the API Requester function of z/OS Connect EE to call a health insurance claim rule service hosted in the IBM Cloud.  The program is invoked as a REST API using z/OS Connect EE.
+This repository contains a sample CICS COBOL application that uses the API Requester function of z/OS Connect EE to call a health insurance claim rule API hosted on the IBM Cloud.  The CICS application is invoked as a REST API using z/OS Connect EE.
 
 ![Diagram 1](https://github.com/zosconnect/zosconnect-sample-cobol-apirequester/blob/master/media/Diag720x405.png)
 
@@ -77,9 +77,9 @@ vsam.jcl
 
 ## Deploying the sample API
 
-The repository provides the sample API (**cicsClaimsAPI.aar**), service (**CICSClaimsService.sar**) and API requester (**claims.ara**) archive files. 
+This repository includes the sample API (**cicsClaimsAPI.aar**), service (**CICSClaimsService.sar**) and API requester (**claims.ara**) archive files. 
 
-Follow the steps below to deploy the provided archive files:
+Follow the steps below to deploy the included archive files:
 
 * To deploy the sample service (**CICSClaimsService.sar**), follow the steps described in the [Automated service archive management](https://www.ibm.com/support/knowledgecenter/SS4SVW_3.0.0/administering/auto_sar_mgmnt.html) section of the z/OS Connect EE documentation in the IBM Knowledge Center. If transferring the file via ftp, ensure the file is transferred as binary.
 
