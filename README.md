@@ -77,7 +77,7 @@ vsam.jcl
 
 * To enable the CICS applications to call REST APIs through the z/OS Connect EE server, [the communication stub in the CICS region needs to be configured](https://www.ibm.com/support/knowledgecenter/SS4SVW_3.0.0/configuring/config_cics_commstub.html). This requires setting up the following resources: TDQUEUE, URIMAP, and PROGRAM.
 
-Below is a sample URIMAP definition that handles HTTP client requests from the communication stub to the z/OS Connect EE server
+Below is a sample URIMAP definition that handles HTTP client requests from the communication stub to the z/OS Connect EE server.
 
 ![Diagram 1](https://github.com/zosconnect/zosconnect-sample-cobol-apirequester/blob/master/media/DiagBAQURIMP.png)
 
