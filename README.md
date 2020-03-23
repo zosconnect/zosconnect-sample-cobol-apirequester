@@ -1,4 +1,4 @@
-# Sample z/OS application for z/OS Connect Enterprise Edition (EE)
+# Sample CICS application for z/OS Connect Enterprise Edition (EE)
 
 This repository contains a sample CICS COBOL application that uses the API Requester function of z/OS Connect EE to call a health insurance claim rule API hosted on the IBM Cloud.  The CICS application is invoked as a REST API using z/OS Connect EE.
 
