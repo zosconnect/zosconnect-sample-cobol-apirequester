@@ -2,7 +2,7 @@
 
 This repository contains a sample CICS COBOL application that uses the API Requester function of z/OS Connect EE to call a health insurance claim rule API hosted on the IBM Cloud.  The CICS application is invoked as a REST API using z/OS Connect EE.
 
-![Diagram 1](https://github.com/zosconnect/zosconnect-sample-cobol-apirequester/blob/master/media/Diag720x405.png)
+![Diagram 1](https://github.com/zosconnect/zosconnect-sample-cobol-apirequester/blob/master/media/DiagFlow.png)
 
 ## Prerequisites
 
