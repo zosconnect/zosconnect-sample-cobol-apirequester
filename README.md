@@ -62,7 +62,7 @@ vsam.jcl
   chmod -R 750 ./resources
   ```
 
-* Setup definitions for the API Requester end-point and the CICS IPIC connection in server.xml. The server.xml should have the following entries added.
+* Setup definitions for the API Requester end-point (outbound) and the CICS IPIC connection (inbound) in server.xml. The server.xml should have the following entries added.
   ```xml
   <zosconnect_endpointConnection id="nodejsClaims"
      host="claims-rule-node-demo.mybluemix.net"
