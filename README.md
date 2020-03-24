@@ -141,6 +141,8 @@ This will return the following results:
     "reason": "Amount exceeded $100. Claim require further review."
   }
   ```
+  
+**NOTE:** If you prefer to run the health claim business rule locally, you can get the sample source code (sample-3.js) provided in the [GitHub Sample on Node.js clients](https://github.com/zosconnect/sample-nodejs-clients).
 
 Next step is to test the CICS sample application that calls the health insurance claim REST API.
 
