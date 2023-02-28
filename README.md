@@ -111,15 +111,15 @@ At this point, the sample API is now ready for testing. Start by testing the RES
 On a browser, type the following for an **Accepted** health insurance claim:
 
   ```text
-  http://claims-rule-node-demo.mybluemix.net/claim/rule?claimType=MEDICAL&claimAmount=100.00
+  https://yt-claims-multi-arch-yt-zosconnect-demo.ytcluster01-tor01-m3c-4x3-fb24546bc9d850e9e034b4027bf0ce8c-0000.us-east.containers.appdomain.cloud/claims/claim/rule?claimType=MEDICAL&claimAmount=100.00
   ```
 
 This will return the following results:
 
   ```json
   {
-   "claim-type": "MEDICAL",
-   "amount": "100.00",
+   "claimType": "MEDICAL",
+   "claimAmount": "100.00",
    "status": "Accepted",
    "reason": "Normal claim"
   }
@@ -128,17 +128,17 @@ This will return the following results:
 and type the following for a **Rejected** health insurance claim.
 
   ```text
-  http://claims-rule-node-demo.mybluemix.net/claim/rule?claimType=MEDICAL&claimAmount=250.00
+  https://yt-claims-multi-arch-yt-zosconnect-demo.ytcluster01-tor01-m3c-4x3-fb24546bc9d850e9e034b4027bf0ce8c-0000.us-east.containers.appdomain.cloud/claims/claim/rule?claimType=MEDICAL&claimAmount=350.00
   ```
 
 This will return the following results:
 
   ```json
   {
-    "claim-type": "MEDICAL",
-    "amount": "250.00",
+    "claimType": "MEDICAL",
+    "claimAmount": "350.00",
     "status": "Rejected",
-    "reason": "Amount exceeded $100. Claim require further review."
+    "reason": "Amount exceeded 300.00. Claim require further review."
   }
   ```
   
