@@ -119,7 +119,7 @@ This will return the following results:
   ```json
   {
    "claimType": "MEDICAL",
-   "claimAmount": "100.00",
+   "claimAmount": 100,
    "status": "Accepted",
    "reason": "Normal claim"
   }
@@ -136,7 +136,7 @@ This will return the following results:
   ```json
   {
     "claimType": "MEDICAL",
-    "claimAmount": "350.00",
+    "claimAmount": 350,
     "status": "Rejected",
     "reason": "Amount exceeded 300.00. Claim require further review."
   }
